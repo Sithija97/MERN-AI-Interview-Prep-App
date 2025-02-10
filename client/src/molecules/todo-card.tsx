@@ -6,6 +6,7 @@ type IProps = {
   createdAt: string;
   completed: boolean;
   isDescriptive?: boolean;
+  clickFunc?: () => void;
 };
 
 export default function TodoCard({
@@ -14,13 +15,15 @@ export default function TodoCard({
   createdAt,
   completed,
   isDescriptive = false,
+  clickFunc,
 }: IProps) {
   return (
     <>
       <div
-        className={`flex items-center justify-between ${
+        className={`flex items-center justify-between cursor-pointer ${
           isDescriptive ? "p-8" : "p-4"
         } bg-white rounded-[8px] hover:shadow-md transition-all duration-200 border border-gray-200 text-justify`}
+        onClick={isDescriptive ? () => {} : clickFunc}
       >
         {/* Left Section: Checkbox and Content */}
         <div className="flex items-start gap-4">

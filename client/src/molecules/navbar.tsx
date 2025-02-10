@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
-import { ROOT } from "../routes";
+import { Link, useNavigate } from "react-router-dom";
+import { LOGIN, ROOT } from "../routes";
 import { useAppDispatch } from "../store";
 import { logoutUser } from "../store/auth.slice";
 
 export const Navbar = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  const logout = async () => await dispatch(logoutUser());
+  const logout = async () => {
+    await dispatch(logoutUser());
+    navigate(LOGIN);
+  };
   return (
     <div className="h-[52px] bg-white border-b-[1px] flex items-center justify-between">
       <div className="h-full flex items-center">

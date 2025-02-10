@@ -9,6 +9,7 @@ export type INote = {
 
 export type INoteState = {
   notes: INote[];
+  selectedNote: INote | undefined;
   createNoteStatus: string;
   createNoteSuccess: boolean;
   createNoteError: boolean;

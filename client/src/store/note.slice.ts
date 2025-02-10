@@ -5,6 +5,7 @@ import noteService from "../services/note";
 
 const initialState: INoteState = {
   notes: [],
+  selectedNote: undefined,
   createNoteStatus: LoadingStates.IDLE,
   createNoteSuccess: false,
   createNoteError: false,
@@ -52,7 +53,11 @@ export const getNotesByUser = createAsyncThunk(
 const NoteSlice = createSlice({
   name: "notes",
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedNote(state, action) {
+      state.selectedNote = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       // create
@@ -86,5 +91,5 @@ const NoteSlice = createSlice({
   },
 });
 
-// export const {  } = NoteSlice.actions;
+export const { setSelectedNote } = NoteSlice.actions;
 export default NoteSlice.reducer;
