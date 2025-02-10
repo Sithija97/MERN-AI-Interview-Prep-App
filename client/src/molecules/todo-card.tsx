@@ -44,7 +44,7 @@ export default function TodoCard({
             <h3 className="text-sm font-semibold text-gray-800">
               {title || "Untitled Task"}
             </h3>
-            <p className="text-sm text-gray-600 mt-1 max-w-md">
+            <p className="text-sm text-gray-600 mt-1 max-w-lg">
               {description || "No description provided."}
             </p>
           </div>

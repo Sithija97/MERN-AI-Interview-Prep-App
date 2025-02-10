@@ -46,22 +46,3 @@ export type IAuthState = {
   changeUserAvatarSuccess: boolean;
   changeUserAvatarError: boolean;
 };
-
-export type IPost = {
-  _id: string;
-  title: string;
-  content: string;
-  image: string;
-  createdAt: string; // ISO timestamp format
-  updatedAt: string; // ISO timestamp format
-};
-
-export type IPostState = {
-  posts: IPost[];
-  createPostStatus: string;
-  createPostSuccess: boolean;
-  createPostError: boolean;
-  getPostStatus: string;
-  getPostSuccess: boolean;
-  getPostError: boolean;
-};

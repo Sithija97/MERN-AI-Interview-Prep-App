@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { ROOT } from "../routes";
+import { useAppDispatch } from "../store";
+import { logoutUser } from "../store/auth.slice";
 
 export const Navbar = () => {
+  const dispatch = useAppDispatch();
+
+  const logout = async () => await dispatch(logoutUser());
   return (
-    <div className="h-[52px] bg-white border-b-[1px]">
+    <div className="h-[52px] bg-white border-b-[1px] flex items-center justify-between">
       <div className="h-full flex items-center">
         <Link to={ROOT}>
           <img
@@ -14,6 +19,9 @@ export const Navbar = () => {
         </Link>
         <p className="font-medium">To Do</p>
       </div>
+      <button onClick={logout} className="mr-6">
+        Log out
+      </button>
     </div>
   );
 };

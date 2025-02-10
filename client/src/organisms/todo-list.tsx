@@ -1,50 +1,20 @@
 import TodoCard from "../molecules/todo-card";
+import { RootState, useAppSelector } from "../store";
+import { truncateText } from "../utils";
 
 export const TodoList = () => {
+  const { notes } = useAppSelector((state: RootState) => state.notes);
   return (
     <div className="py-6 px-8 flex flex-col gap-3">
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
-      <TodoCard
-        title="Complete React Project"
-        description={"Work on the frontend with Tailwind UI components."}
-        createdAt={"2025-02-07T14:22:00.000Z"}
-        completed={true}
-      />
+      {notes.map((note, index) => (
+        <TodoCard
+          key={index}
+          title={note.title}
+          description={truncateText(note.description, 50)}
+          createdAt={note.createdAt}
+          completed={true}
+        />
+      ))}
     </div>
   );
 };
