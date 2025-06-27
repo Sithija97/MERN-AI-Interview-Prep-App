@@ -1,4 +1,4 @@
-export * from "./sign-up";
-export * from "./sign-in";
+export * from "./auth";
 export * from "./home";
-export * from "./add.new";
+export * from "./interview";
+export * from "./landing";
