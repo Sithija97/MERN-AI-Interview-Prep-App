@@ -38,11 +38,11 @@ export const LandingPage = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 pr-0 md:pr-4 mb-8 md:mb-0">
               <div className="flex items-center justify-left mb-2">
-                <div className="flex items-center gap-2 text-[13px] text-blue-600 font-semibold bg-blue-100 px-3 py-1 rounded-full">
+                <div className="flex items-center gap-2 text-[13px] text-blue-600 font-semibold bg-white px-3 py-1 rounded-full">
                   <LuSparkles /> Ai Powered
                 </div>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl text-black font-medium mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl text-black font-semibold mb-6 leading-tight">
                 Ace Interviews with <br />{" "}
                 <span className="text-transparent bg-clip-text bg-[radial-gradient(circle,#3b82f6_0%,_#1d4ed8_100%)] bg-[length:200%_200%] animate-text-shine font-semibold">
                   AI-Powered
@@ -73,9 +73,9 @@ export const LandingPage = () => {
         <div>
           <section className="flex items-center justify-center -mt-16 md:-mt-36">
             <img
-              src="https://cdn.dribbble.com/userupload/17604158/file/original-2338d17434e2373c57539c6549b4da08.jpg?resize=1504x965&vertical=center"
+              src={"./img.png"}
               alt="Hero Img"
-              className="w-full max-w-[90vw] md:max-w-[80vw] rounded-lg object-cover"
+              className="w-full max-w-[90vw] md:max-w-[70vw] rounded-lg object-cover"
             />
           </section>
         </div>
