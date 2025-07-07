@@ -23,10 +23,8 @@ export const Input = ({
   };
   return (
     <div>
-      <label htmlFor="" className="">
-        {label}
-      </label>
-      <div className="">
+      <label className="text[13px] text-slate-800">{label}</label>
+      <div className="input-box">
         <input
           type={
             type == "password" ? (showPassword ? "text" : "password") : type
@@ -34,7 +32,7 @@ export const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
-          className=""
+          className="w-full bg-transparent outline-none"
         />
 
         {type === "password" && (
@@ -42,13 +40,13 @@ export const Input = ({
             {showPassword ? (
               <FaRegEye
                 size={22}
-                className=""
+                className="text-primary cursor-pointer"
                 onClick={() => toggleShowPassword()}
               />
             ) : (
               <FaRegEyeSlash
                 size={22}
-                className=""
+                className="text-slate-400 cursor-pointer"
                 onClick={() => toggleShowPassword()}
               />
             )}
